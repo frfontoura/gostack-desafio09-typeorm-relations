@@ -16,15 +16,12 @@ class CustomersRepository implements ICustomersRepository {
       name,
       email,
     });
-
     await this.ormRepository.save(customer);
-
     return customer;
   }
 
   public async findById(id: string): Promise<Customer | undefined> {
     const findCustomer = await this.ormRepository.findOne(id);
-
     return findCustomer;
   }
 
@@ -34,7 +31,6 @@ class CustomersRepository implements ICustomersRepository {
         email,
       },
     });
-
     return findCustomer;
   }
 }
